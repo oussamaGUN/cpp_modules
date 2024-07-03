@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include "Contact.hpp"
-#define MAX_CONTACTS 3
+#define MAX_CONTACTS 2
 
 class PhoneBook
 {
