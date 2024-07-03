@@ -37,7 +37,7 @@ int main(int argc, char const *argv[])
                 std::cout << phone.Trunc(phone.contacts[j].NickNameGetter()) << std::endl;
             }
             std::cout << "Enter the index of a contact: ", std::cin >> index;
-            if (stoi(index) < 0 || stoi(index) > i - 1) std::cout << "out of range" << std::endl;
+            if ((index[0] == '-' && index.length() > 11) || index.length() > 10 || stoi(index) < 0 || stoi(index) > i - 1) std::cout << "out of range MAX range is " << i - 1 << std::endl;
             else { 
                 std::cout << "First Name: " << phone.contacts[stoi(index)].FirstNameGetter() << std::endl;
                 std::cout << "Last Name: " << phone.contacts[stoi(index)].LastNameGetter() << std::endl;
