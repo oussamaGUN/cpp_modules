@@ -20,10 +20,15 @@ int main(int argc, char const *argv[])
             if (i > MAX_CONTACTS - 1)
                 i = MAX_CONTACTS - 1;
             std::cout << "Enter first name: ", std::cin >> FirstName;
+            if (std::cin.eof()) break ;
             std::cout << "Enter last name: ", std::cin >> LastName;
+            if (std::cin.eof()) break ;
             std::cout << "Enter nickname: ", std::cin >> NickName;
+            if (std::cin.eof()) break ;
             std::cout << "Enter phone number: ", std::cin >> PhoneNumber;
+            if (std::cin.eof()) break ;
             std::cout << "Enter darkest secret: ", std::cin >> DarkestSecret;
+            if (std::cin.eof()) break ;
             phone.contacts[i].setter(FirstName, LastName, NickName, PhoneNumber, DarkestSecret);
             i++;
         } else if (!std::cin.eof() && phone.Compare(input, "SEARCH")) {
@@ -37,7 +42,10 @@ int main(int argc, char const *argv[])
                 std::cout << phone.Trunc(phone.contacts[j].NickNameGetter()) << std::endl;
             }
             std::cout << "Enter the index of a contact: ", std::cin >> index;
-            if ((index[0] == '-' && index.length() > 11) || index.length() > 10 || stoi(index) < 0 || stoi(index) > i - 1) std::cout << "out of range MAX range is " << i - 1 << std::endl;
+
+            if (std::cin.eof()) break ;
+            if (phone.ValidInput(index) || (index[0] == '-' || index.length() > 11) || index.length() > 10 || std::stoll(index) > INT_MAX ||
+                std::stoll(index) < INT_MIN  || stoi(index) < 0 || stoi(index) > i - 1) std::cout << "out of range MAX range is " << i << std::endl;
             else { 
                 std::cout << "First Name: " << phone.contacts[stoi(index)].FirstNameGetter() << std::endl;
                 std::cout << "Last Name: " << phone.contacts[stoi(index)].LastNameGetter() << std::endl;
@@ -48,10 +56,8 @@ int main(int argc, char const *argv[])
 
         } else if (!std::cin.eof() && phone.Compare(input, "EXIT")) {
             break ;
-        } else
+        } else if (!std::cin.eof())
             std::cout << "invalid input" << std::endl;
-
-
     }
     return 0;
 }
