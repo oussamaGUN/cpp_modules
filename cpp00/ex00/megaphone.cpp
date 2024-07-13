@@ -17,6 +17,8 @@ int main(int ac, char const *av[])
                 std::cout << av[i][j];
             j++;
         }
+        if (i + 1 != ac)
+            std::cout << ' ';
         i++;
     }
     std::cout << std::endl;
