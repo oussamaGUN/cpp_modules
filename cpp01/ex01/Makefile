@@ -1,12 +1,12 @@
-SRC = main.cpp zombieHorde.cpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = Moar_Brainnnnz
+NAME = a.out
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-CC = g++
+CC = c++
 
 all: $(NAME)
 

@@ -2,11 +2,11 @@
 
 int main(int argc, char const *argv[])
 {
-    Zombie *zombie = newZombie("foo");
-    if (!zombie)
-        return 1;
-    zombie->announce();
-    delete zombie;
-    randomChump("poo");    
+    Zombie *Zom1 = newZombie("foo");
+    Zom1->announce();
+
+    randomChump("pooo");
+
+    delete Zom1;
     return 0;
 }

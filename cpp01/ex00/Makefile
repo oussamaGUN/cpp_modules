@@ -1,11 +1,12 @@
-SRC = main.cpp newZombie.cpp randomChump.cpp
+SRC = main.cpp newZombie.cpp Zombie.cpp randomChump.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
-NAME = BraiiiiiiinnnzzzZ
+NAME = a.out
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-CC = g++
+CC = c++
 
 all: $(NAME)
 
