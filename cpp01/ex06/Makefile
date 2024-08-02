@@ -1,8 +1,7 @@
-SRC = main.cpp Zombie.cpp zombieHorde.cpp
-
+SRC = main.cpp Harl.cpp 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = a.out
+NAME = harlFilter
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 

@@ -1,19 +1,13 @@
-#include <iostream>
+#include "Zombie.hpp"
 
 
 int main(int argc, char const *argv[])
 {
-    std::string str = "HI THIS IS BRAIN";
-    std::string *stringPTR = &str;
-    std::string& stringREF = str;
+    int N = 10;
+    Zombie  *zom = zombieHorde(N , "oussama");
 
-    std::cout << &str << std::endl;
-    std::cout << stringPTR << std::endl;
-    std::cout << &stringREF << std::endl;
-
-    std::cout << str << std::endl;
-    std::cout << *stringPTR << std::endl;
-    std::cout << stringREF << std::endl;
-
+    for (int i = 0;i < N; i++)
+        std::cout << zom[i].getVal() << std::endl;
+    delete [] zom;
     return 0;
 }
